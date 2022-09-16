@@ -1,9 +1,11 @@
 package com.aminivan.newsdatabinding
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.aminivan.newsdatabinding.databinding.ItemNewsBinding
@@ -37,13 +39,13 @@ class AdapterNews(var listNews: ArrayList<News>): RecyclerView.Adapter<AdapterNe
         holder.binding.cvItem.setOnClickListener(object: View.OnClickListener{
             override fun onClick(view: View?) {
                 var bundle = Bundle()
-                bundle.putString("title",title)
-                bundle.putString("date",date)
-                bundle.putInt("image",image)
-                bundle.putString("writer",writer)
-                bundle.putString("content",content)
-
+                bundle.putString("title",listNews[position].title)
+                bundle.putString("date",listNews[position].date)
+                bundle.putInt("image",listNews[position].image)
+                bundle.putString("writer",listNews[position].writer)
+                bundle.putString("content",listNews[position].content)
                 Navigation.findNavController(holder.itemView).navigate(R.id.action_fragmentMain_to_fragmentDetail,bundle)
+
             }
         })
     }

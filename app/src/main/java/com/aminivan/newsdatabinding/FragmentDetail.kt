@@ -32,7 +32,6 @@ class FragmentDetail : Fragment() {
         var image = arguments?.getInt("image")
         var writer = arguments?.getString("writer")
         var content = arguments?.getString("content")
-        Toast.makeText(context, "${title}", Toast.LENGTH_SHORT).show()
         binding.tvTitleDetail.text = title
         binding.tvDate.text = date
         binding.ivDetail.setImageResource(image!!)
@@ -43,5 +42,6 @@ class FragmentDetail : Fragment() {
     fun detailNews(listNews: News){
         binding.detailnews = listNews
     }
+
 
 }

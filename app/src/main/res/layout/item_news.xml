@@ -9,32 +9,44 @@
     </data>
 
     <androidx.cardview.widget.CardView
+        android:layout_margin="20dp"
         android:id="@+id/cv_item"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:cardElevation="20dp"
+        app:cardCornerRadius="10dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/tvJudulBerita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{datanews.title,default="Neon Genesis Evangelion"}'
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+            <ImageView
+                android:layout_marginTop="60dp"
+                android:id="@+id/ivBerita"
+                android:layout_width="370dp"
+                android:layout_height="160dp"
+                app:imageResource="@{datanews.image}"
+                />
 
-        <TextView
-            android:id="@+id/tvJudulBerita"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{datanews.title}"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            <TextView
+                android:layout_marginTop="20dp"
+                android:id="@+id/tvTanggalBerita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{datanews.date}" />
+        </LinearLayout>
 
-        <TextView
-            android:layout_marginTop="20dp"
-            android:id="@+id/tvTanggalBerita"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{datanews.date}" />
 
-        <ImageView
-            android:layout_marginTop="5dp"
-            android:id="@+id/ivBerita"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:imageResource="@{datanews.image}"
-            android:layout_marginLeft="350dp" />
 
     </androidx.cardview.widget.CardView>
 </layout>

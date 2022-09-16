@@ -27,27 +27,33 @@
                     android:id="@+id/tvTitleDetail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@{detailnews.title}" />
+                    android:text="@{detailnews.title}"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    />
 
                 <TextView
+                    android:layout_gravity="center_horizontal"
                     android:id="@+id/tvDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@{detailnews.date}"
-
+                    android:gravity="center_horizontal"
                     />
 
                 <ImageView
                     android:id="@+id/ivDetail"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="410dp"
+                    android:layout_height="200dp"
                     app:imageResource="@{detailnews.image}" />
 
                 <TextView
                     android:id="@+id/tvWriterDetail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@{detailnews.writer}" />
+                    android:gravity="center_horizontal"
+                    android:text='@{detailnews.writer,default="Irvan Wijaya"}' />
 
                 <TextView
                     android:id="@+id/tvContent"
